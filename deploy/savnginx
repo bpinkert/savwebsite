@@ -1,5 +1,5 @@
 upstream app_server {
-    server unix:/srv/savshop/gunicorn.sock fail_timeout=0;
+    server unix:/srv/savsite/gunicorn.sock fail_timeout=0;
 }
 
 server {
@@ -16,8 +16,8 @@ server {
     index index.html index.htm;
 
     ssl on;
-    ssl_certificate /srv/savshop/ssl/STAR_savantdigital.net.chained.crt;
-    ssl_certificate_key /srv/savshop/ssl/STAR_savantdigital.net.key;
+    ssl_certificate /srv/savsite/ssl/STAR_savantdigital.net.chained.crt;
+    ssl_certificate_key /srv/savsite/ssl/STAR_savantdigital.net.key;
 
     ssl_session_timeout 5m;
 
@@ -40,16 +40,16 @@ server {
 
     # Your Django project's media files - amend as required
     location /media  {
-        alias /srv/savshop/static/media;
+        alias /srv/savsite/static/media;
     }
 
     # your Django project's static files - amend as required
     location /static {
-        alias /srv/savshop/static; 
+        alias /srv/savsite/static; 
     }
 
     # Proxy the static assests for the Django Admin panel
     location /static/admin {
-       alias /srv/savenv/lib/python2.7/site-packages/django/contrib/admin/static/admin/;
+       alias /srv/savvyenv/lib/python2.7/site-packages/django/contrib/admin/static/admin/;
     }	
 }
