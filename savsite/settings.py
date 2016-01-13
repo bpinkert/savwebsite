@@ -144,13 +144,13 @@ FILE_UPLOAD_PERMISSIONS = 0o644
 DATABASES = {
     "default": {
         # Add "postgresql_psycopg2", "mysql", "sqlite3" or "oracle".
-        "ENGINE": "django.db.backends.sqlite3",
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
         # DB name or path to database file if using sqlite3.
-        "NAME": "sav.db",
+        "NAME": "savdb",
         # Not used with sqlite3.
-        "USER": "",
+        "USER": "savadmin",
         # Not used with sqlite3.
-        "PASSWORD": "",
+        "PASSWORD": "cs122!32@k%%cuem",
         # Set to empty string for localhost. Not used with sqlite3.
         "HOST": "",
         # Set to empty string for default. Not used with sqlite3.
@@ -226,7 +226,7 @@ INSTALLED_APPS = (
     "mezzanine.twitter",
     "mezzanine.accounts",
     # "mezzanine.mobile",
-    "savpay",
+    #"savpay",
 )
 
 # List of processors used by RequestContext to populate the context.
