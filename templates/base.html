@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}"{% if LANGUAGE_BIDI %} dir="rtl"{% endif %}>
+{% load pages_tags mezzanine_tags i18n future staticfiles %}
+
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="{% block meta_keywords %}{% endblock %}">
+<meta name="description" content="{% block meta_description %}{% endblock %}">
+<title>{% block meta_title %}{% endblock %}{% if settings.SITE_TITLE %} | {{ settings.SITE_TITLE }}{% endif %}</title>
+<link rel="shortcut icon" href="{% static "img/favicon.ico" %}">
+<link rel="apple-touch-icon" href="{% static "img/favicon.ico" %}" />
+<link rel="facebook" href="{% static "img/favicon.ico" %}" />
+<link href="https://plus.google.com/114257979118175582811/" rel="publisher" />
+{% ifinstalled mezzanine.blog %}
+<link rel="alternate" type="application/rss+xml" title="RSS" href="{% url "blog_post_feed" "rss" %}">
+<link rel="alternate" type="application/atom+xml" title="Atom" href="{% url "blog_post_feed" "atom" %}">
+{% endifinstalled %}
+
+{% compress css %}
+<link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
+<link rel="stylesheet" href="{% static "css/mezzanine.css" %}">
+
+
+ <link href="{% static "css/font-awesome.min.css" %}" rel="stylesheet" type="text/css" />
+	
+    <link href="{% static "css/style.css" %}" rel="stylesheet">
+
+
+
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,600,800' rel='stylesheet' type='text/css'>
+{% if LANGUAGE_BIDI %}
+<link rel="stylesheet" href="{% static "css/rtl.css" %}">
+{% endif %}
+{% ifinstalled cartridge.shop %}
+<link rel="stylesheet" href="{% static "css/cartridge.css" %}">
+{% if LANGUAGE_BIDI %}
+<link rel="stylesheet" href="{% static "css/cartridge.rtl.css" %}">
+{% endif %}
+{% endifinstalled %}
+{% block extra_css %}{% endblock %}
+{% endcompress %}
+
+{% compress js %}
+<script src="{% static "mezzanine/js/"|add:settings.JQUERY_FILENAME %}"></script>
+<script src="{% static "js/bootstrap.js" %}"></script>
+<script src="{% static "js/bootstrap-extras.js" %}"></script>
+{% block extra_js %}{% endblock %}
+{% include "includes/footer_scripts.html" %}
+{% endcompress %}
+
+<!--[if lt IE 9]>
+<script src="{% static "js/html5shiv.js" %}"></script>
+<script src="{% static "js/respond.min.js" %}"></script>
+<![endif]-->
+
+{% block extra_head %}
+
+{% endblock %}
+</head>
+
+<body id="{% block body_id %}page-top{% endblock %}">
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NC2NT3"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NC2NT3');</script>
+<!-- End Google Tag Manager -->
+{% block intro %}
+
+
+{% endblock %}
+	<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+<div class="container">
+<div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">{% trans "Toggle Navigation" %}</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+    {% if settings.SITE_TITLE %}<a class="navbar-brand" href="/">{{ settings.SITE_TITLE }}</a>{% endif %}
+    {% if settings.SITE_TAGLINE %}<p class="navbar-text visible-lg">{{ settings.SITE_TAGLINE }}</p>{% endif %}
+</div>
+<div class="navbar-collapse collapse navbar-right">
+    
+    {% page_menu "pages/menus/dropdown.html" %}
+</div>
+</div>
+</div>
+{% block title_wrapper%}
+<div id="blue">
+	    <div class="container">
+
+			<div class="row">
+				<h3>{% block title %}{% endblock %}</h3>
+			</div><!-- /row -->
+	    </div> <!-- /container -->
+	</div>
+	<div class="breadcrumb" prefix="v: http://rdf.data-vocabulary.org/#">
+	    	{% page_menu "pages/menus/breadcrumb.html" %}
+	</div>
+	
+{% endblock %}
+<div class="container">
+
+{% nevercache %}
+{% if messages %}
+<div class="messages">
+{% for message in messages %}
+<div class="alert alert-dismissable alert-{{ message.tags }}" data-alert="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    {{ message }}
+</div>
+{% endfor %}
+</div>
+{% endif %}
+{% endnevercache %}
+
+ 
+   
+
+
+
+</div>
+{% block all_content%}
+<div class="container mtb">
+<div class="row">
+{% block left_wrapper%}
+<div class="col-md-{% block left_width %}2{% endblock %} left">
+    {% block left_panel %}
+    <div class="panel panel-default tree">{% page_menu "pages/menus/tree.html" %}</div>
+    {% endblock %}
+</div>
+{% endblock %}
+{% block main_wrapper%}
+<div class="col-md-{% block main_width %}7{% endblock %} middle">
+    {% block main %}{% endblock %}
+</div>
+{% endblock %}
+{% block right_wrapper%}
+<div class="col-md-{% block right_width %}3{% endblock %} right">
+    {% nevercache %}
+    {% include "includes/user_panel.html" %}
+    {% endnevercache %}
+  
+    {% block right_panel %}
+    {% ifinstalled mezzanine.twitter %}
+    {% include "twitter/tweets.html" %}
+    {% endifinstalled %}
+    {% endblock %}
+    
+</div>
+{% endblock %}
+
+</div>
+</div>
+{% endblock %}
+
+<div id="footerwrap">
+<div class="container">
+	<div class="row">
+	<div class="col-lg-6">
+		 		{% page_menu "pages/menus/footer.html" %}	
+	</div>
+	<div class="col-lg-3">
+		 			<h4>Social Links</h4>
+		 			<div class="hline-w"></div>
+		 			<p>
+		 				<a class="fb-header" href="https://www.facebook.com/savantdigital" title="Like Website Savants on Facebook" alt="Like Website Savants on Facebook" target="_blank"><i class="fa fa-facebook-square fa-3x fb-header" style="color:#3B5998"></i></a>
+                                                <a class="tw-header" href="https://twitter.com/WebsiteSavants" title="Follow Website Savants on Twitter" alt="Follow Website Savants on Twitter" target="_blank"><i class="fa fa-twitter-square fa-3x fb-header" style="color:#55ACEE"></i></a>
+                                                <a class="gp-header" href="https://plus.google.com/114257979118175582811" title="Visit Website Savants on Google Plus" alt="Website Savants on Google Plus" target="_blank"><i class="fa fa-google-plus-square fa-3x gp-header" style="color:#F50000"></i></a>
+						<a class="rss-header hs-rss-link" href="https://feeds.feedburner.com/WebsiteSavants" title="Subscribe to Website Savants RSS on Feedburner" alt="Subscribe to Website Savants RSS on Feedburner" target="_blank"><i class="fa fa-rss-square fa-3x rss-header" style="color:#FF801C"></i></a>
+                                                </p>
+
+		 				</p>
+		 		</div>
+		 		<div class="col-lg-3">
+		 			<h4>Follow on Twitter</h4>
+		 			            <a class="twitter-timeline"  href="https://twitter.com/WebsiteSavants" data-widget-id="503633727621038080">Tweets by @WebsiteSavants</a>
+          
+						
+		 			</p>
+		 		</div>
+		 	
+		</div>
+
+<div class="row">
+<p class="site-info text-center">
+    {% trans "Template by" %}
+    <a href="https://www.savantdigital.net">Savant Digital</a>
+    {% trans "Mezzanine theme by" %}
+    <a href="http://thecodinghouse.in">CodingHouse</a>
+    
+</p>
+</div>
+</div>
+</div>
+<!-- Core JavaScript Files -->
+  
+    
+     <!-- Placed at the end of the document so the pages load faster -->
+   
+   
+	<script src="{% static "js/retina-1.1.0.js" %}"></script>
+	<script src="{% static "js/jquery.hoverdir.js" %}"></script>
+	<script src="{% static "js/jquery.hoverex.min.js" %}"></script>
+	<script src="{% static "js/jquery.prettyPhoto.js" %}"></script>
+  	<script src="{% static "js/jquery.isotope.min.js" %}"></script>
+  	<script src="{% static "js/custom.js" %}"></script>
+  	    <script>
+// Portfolio
+(function($) {
+	"use strict";
+	var $container = $('.portfolio'),
+		$items = $container.find('.portfolio-item'),
+		portfolioLayout = 'fitRows';
+		
+		if( $container.hasClass('portfolio-centered') ) {
+			portfolioLayout = 'masonry';
+		}
+				
+		$container.isotope({
+			filter: '*',
+			animationEngine: 'best-available',
+			layoutMode: portfolioLayout,
+			animationOptions: {
+			duration: 750,
+			easing: 'linear',
+			queue: false
+		},
+		masonry: {
+		}
+		}, refreshWaypoints());
+		
+		function refreshWaypoints() {
+			setTimeout(function() {
+			}, 1000);   
+		}
+				
+		$('nav.portfolio-filter ul a').on('click', function() {
+				var selector = $(this).attr('data-filter');
+				$container.isotope({ filter: selector }, refreshWaypoints());
+				$('nav.portfolio-filter ul a').removeClass('active');
+				$(this).addClass('active');
+				return false;
+		});
+		
+		function getColumnNumber() { 
+			var winWidth = $(window).width(), 
+			columnNumber = 1;
+		
+			if (winWidth > 1200) {
+				columnNumber = 5;
+			} else if (winWidth > 950) {
+				columnNumber = 4;
+			} else if (winWidth > 600) {
+				columnNumber = 3;
+			} else if (winWidth > 400) {
+				columnNumber = 2;
+			} else if (winWidth > 250) {
+				columnNumber = 1;
+			}
+				return columnNumber;
+			}       
+			
+			function setColumns() {
+				var winWidth = $(window).width(), 
+				columnNumber = getColumnNumber(), 
+				itemWidth = Math.floor(winWidth / columnNumber);
+				
+				$container.find('.portfolio-item').each(function() { 
+					$(this).css( { 
+					width : itemWidth + 'px' 
+				});
+			});
+		}
+		
+		function setPortfolio() { 
+			setColumns();
+			$container.isotope('reLayout');
+		}
+			
+		$container.imagesLoaded(function () { 
+			setPortfolio();
+		});
+		
+		$(window).on('resize', function () { 
+		setPortfolio();          
+	});
+})(jQuery);
+</script>
+</body>
+</html>

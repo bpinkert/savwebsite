@@ -1,0 +1,290 @@
+{% extends "base.html" %}
+{% load i18n staticfiles mezzanine_tags blog_tags %}
+
+{% block meta_title %}{% trans "Home" %}{% endblock %}
+{% block extra_head %}
+
+{% endblock %}
+{% block title_wrapper%}
+{% endblock %}
+{% block all_content %}
+{% block left_wrapper%}
+{% endblock %}
+
+{% block main_wrapper%}
+
+{% endblock %}
+
+{% block right_wrapper%}
+{% endblock %}
+<!-- *****************************************************************************************************************
+	 HEADERWRAP
+	 ***************************************************************************************************************** -->
+	<div id="headerwrap">
+	    <div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					 <img src="{% static "img/logo.jpg" %}" class="img-responsive" alt="Savant Digital" title="Savant Digital">
+					
+					</div>
+				
+				</div><!--/row -->
+			<div class="row">
+				<div class="col-lg-12 head-icons">
+					<div class="col-md-4">
+ 					<i class="fa fa-server fa-4x"></i>
+ 					<h4>Secure Website Hosting/Design</h4>
+ 					<p class="head-text">We design dynamic websites and host them on our secure web servers, guarding sensitive information with cryptography and content distribution networks. </p>
+ 					<p><br/><br/><a href="/services/hosting" class="btn btn-theme">More Info</a></p>
+ 				</div>
+ 				<div class="col-md-4">
+ 					<i class="fa fa-shopping-cart fa-4x"></i>
+ 					<h4>Application Development</h4>
+ 					<p class="head-text">Consumers now expect to be able to order anything they want online, most businesses can benefit from having an online shopping-cart. We'll design and host shopping cart applications and much more. </p>
+ 					<p><br/><a href="/services/applications" class="btn btn-theme">More Info</a></p>
+ 				</div>
+ 				<div class="col-md-4">
+ 					<i class="fa fa-sitemap fa-4x"></i>
+ 					<h4>Business Network Optimization</h4>
+ 					<p class="head-text">We can better utilize any existing network infrastructure so that employee teamwork is more efficient. </p>
+ 					<p><br/><a href="/services/networking" class="btn btn-theme">More Info</a></p>
+ 				</div>
+ 				</div><!--/col-lg-12 -->
+			</div><!-- /row -->
+	    </div> <!-- /container -->
+	</div><!-- /headerwrap -->
+
+	<!-- *****************************************************************************************************************
+	 SERVICE LOGOS
+	 ***************************************************************************************************************** -->
+	 <!-- <div id="service">
+	 	<div class="container">
+ 			<div class="row centered">
+ 						 				
+	 		</div>
+	 	</div>
+	 </div> -->
+	 
+	<!-- *****************************************************************************************************************
+	 PORTFOLIO SECTION
+	 ***************************************************************************************************************** -->
+	 <div id="portfoliowrap">
+        <h3>LATEST WORKS</h3>
+
+        <div class="portfolio-centered">
+            <div class="recentitems portfolio">
+				<div class="portfolio-item graphic-design">
+					<div class="he-wrap tpl6">
+					<img src="{% static "img/portfolio/p12.png" %}" alt="" style="margin-top:15%">
+						<div class="he-view">
+							<div class="bg a0" data-animate="fadeIn">
+                                <h3 class="a1" data-animate="fadeInDown">Cardillo's Deli - Greenwich CT</h3>
+                                <a data-rel="prettyPhoto" href="{% static "img/portfolio/p12-big.png" %}" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
+                                <a href="http://www.cardillosdeli.com" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
+                        	</div><!-- he bg -->
+						</div><!-- he view -->		
+					</div><!-- he wrap -->
+				</div><!-- end col-12 -->
+                            
+                <div class="portfolio-item web-design">
+                    <div class="he-wrap tpl6">
+					<img src="{% static "img/portfolio/p2.png" %}" alt="">
+						<div class="he-view">
+							<div class="bg a0" data-animate="fadeIn">
+                                <h3 class="a1" data-animate="fadeInDown">Buddies 4 Paws - Pet Care</h3>
+                                <a data-rel="prettyPhoto" href="{% static "img/portfolio/p2-big.png" %}" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
+                                <a href="http://www.buddies4paws.com" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
+                        	</div><!-- he bg -->
+						</div><!-- he view -->		
+					</div><!-- he wrap -->
+				</div><!-- end col-12 -->
+        
+                <div class="portfolio-item graphic-design">
+                    <div class="he-wrap tpl6">
+					<img src="{% static "img/portfolio/p3.jpg" %}" alt="">
+						<div class="he-view">
+							<div class="bg a0" data-animate="fadeIn">
+                                <h3 class="a1" data-animate="fadeInDown">Champion Maintenance Contractors Inc</h3>
+                                <a data-rel="prettyPhoto" href="{% static "img/portfolio/p3.jpg" %}" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
+                                <a href="http://www.championmaintenance.com" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
+                        	</div><!-- he bg -->
+						</div><!-- he view -->		
+					</div><!-- he wrap -->
+				</div><!-- end col-12 -->
+        
+                <div class="portfolio-item graphic-design">
+                    <div class="he-wrap tpl6">
+					<img src="{% static "img/portfolio/p4.png" %}" alt="">
+						<div class="he-view">
+							<div class="bg a0" data-animate="fadeIn">
+                                <h3 class="a1" data-animate="fadeInDown">NanoBusiness Commercialization Association</h3>
+                                <a data-rel="prettyPhoto" href="{% static "img/portfolio/p4-big.png" %}" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
+                                <a href="https://www.nanobca.org" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
+                        	</div><!-- he bg -->
+						</div><!-- he view -->		
+					</div><!-- he wrap -->
+				</div><!-- end col-12 -->
+                                        
+                <div class="portfolio-item books">
+                    <div class="he-wrap tpl6">
+					<img src="{% static "img/portfolio/p5.jpg" %}" alt="">
+						<div class="he-view">
+							<div class="bg a0" data-animate="fadeIn">
+                                <h3 class="a1" data-animate="fadeInDown">MJB Corp Real-estate</h3>
+                                <a data-rel="prettyPhoto" href="{% static "img/portfolio/p5-big.png" %}" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
+                                <a href="http://www.mjbcorp.com" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
+                        	</div><!-- he bg -->
+						</div><!-- he view -->		
+					</div><!-- he wrap -->
+				</div><!-- end col-12 -->
+                                        
+                <div class="portfolio-item graphic-design">
+                    <div class="he-wrap tpl6">
+					<img src="{% static "img/portfolio/p6.jpg" %}" alt="">
+						<div class="he-view">
+							<div class="bg a0" data-animate="fadeIn">
+                                <h3 class="a1" data-animate="fadeInDown">Mongolian Monkfish Rock NYC</h3>
+                                <a data-rel="prettyPhoto" href="{% static "img/portfolio/p6-big.png" %}" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
+                                <a href="http://www.mongolianmonkfish.com" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
+                        	</div><!-- he bg -->
+						</div><!-- he view -->		
+					</div><!-- he wrap -->
+				</div><!-- end col-12 -->
+                    
+                <div class="portfolio-item books">
+                    <div class="he-wrap tpl6">
+					<img src="{% static "img/portfolio/p7.jpg" %}" alt="">
+						<div class="he-view">
+							<div class="bg a0" data-animate="fadeIn">
+                                <h3 class="a1" data-animate="fadeInDown">Interstate Artesian Well Company</h3>
+                                <a data-rel="prettyPhoto" href="{% static "img/portfolio/p7-big.png" %}" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
+                                <a href="http://www.isawell.com" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
+                        	</div><!-- he bg -->
+						</div><!-- he view -->		
+					</div><!-- he wrap -->
+				</div><!-- end col-12 -->
+                    
+                <div class="portfolio-item graphic-design">
+                    <div class="he-wrap tpl6">
+					<img src="{% static "img/portfolio/p8.jpg" %}" alt="">
+						<div class="he-view">
+							<div class="bg a0" data-animate="fadeIn">
+                                <h3 class="a1" data-animate="fadeInDown">Peggy's Hair Salon of Riverside CT</h3>
+                                <a data-rel="prettyPhoto" href="{% static "img/portfolio/p8.jpg" %}" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
+                                <a href="http://www.peggyshairsalon.com" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
+                        	</div><!-- he bg -->
+						</div><!-- he view -->		
+					</div><!-- he wrap -->
+				</div><!-- end col-12 -->
+                                        
+                <div class="portfolio-item web-design">
+                    <div class="he-wrap tpl6">
+					<img src="{% static "img/portfolio/p1.jpg" %}" alt="">
+						<div class="he-view">
+							<div class="bg a0" data-animate="fadeIn">
+                                <h3 class="a1" data-animate="fadeInDown">American Barbershop of Stratford CT</h3>
+                                <a data-rel="prettyPhoto" href="{% static "img/portfolio/p1.jpg" %}" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
+                                <a href="http://americanbarbershop.us" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
+                        	</div><!-- he bg -->
+						</div><!-- he view -->		
+					</div><!-- he wrap -->
+				</div><!-- end col-12 -->
+    
+			<div class="portfolio-item books">
+                <div class="he-wrap tpl6">
+					<img src="{% static "img/portfolio/p11.png" %}" alt="" style="margin-top: 15%">
+						<div class="he-view">
+							<div class="bg a0" data-animate="fadeIn">
+                                <h3 class="a1" data-animate="fadeInDown">AmySue Taylor Law - Personal Injury Lawyer in Ohio</h3>
+                                <a data-rel="prettyPhoto" href="{% static "img/portfolio/p11.png" %}" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
+                                <a href="https://www.amysuetaylorlaw.com" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
+                        	</div><!-- he bg -->
+						</div><!-- he view -->		
+					</div><!-- he wrap -->
+				</div><!-- end col-12 -->
+                    
+            </div><!-- portfolio -->
+        </div><!-- portfolio container -->
+	 </div><!--/Portfoliowrap -->
+	 
+	 
+	<!-- *****************************************************************************************************************
+	 MIDDLE CONTENT
+	 ***************************************************************************************************************** -->
+
+	 <div class="container mtb">
+	 	<div class="row">
+	 		<div class="col-lg-4 col-lg-offset-1">
+		 		<h3>Savant Digital:</h3>
+				<h4>Internet Service Agency</h4>
+ 				<p><br/><a href="/services/" class="btn btn-theme">More Info</a></p>
+	 		</div>
+	 		
+	 		<div class="col-lg-3">
+	 			<h4>Frequently Asked</h4>
+	 			<div class="hline"></div>
+	 			<!-- <p><a href="http://www.savantdigital.net/helpdesk/kb/1" title="Website vs Web Application">What is the difference between a web application and website?</a></p>
+	 			<p><a href="/services/website-migration-repair/">Can you fix or migrate my website?</a></p>
+	 			<p><a href="/FAQ/website-requirements/">What does my business need for a company website?</a></p>
+	 			<p><a href="/services/content-management/">Do you offer content management services?</a></p>
+	 			<p><a href="/services/custom/">What other services do you offer?</a></p> -->
+	 		</div>
+	 		{% blog_recent_posts 5 as recent_posts %}
+	 		{% if recent_posts %}
+	 		<div class="col-lg-3">
+	 			<h4>{% trans "Recent Posts" %}</h4>
+	 			<div class="hline"></div>
+	 			{% for recent_post in recent_posts %}
+					<p>	<a href="{{ recent_post.get_absolute_url }}">{{ recent_post.title }}</a></p>
+	 			{% endfor %}
+	 			
+	 		</div>
+	 		{% endif %}
+	 		
+	 	</div><!-- /row -->
+	 </div><!-- /container -->
+	 
+	<!-- *****************************************************************************************************************
+	 TESTIMONIALS
+	 ***************************************************************************************************************** -->
+	 <div id="twrap">
+	 	<div class="container centered">
+	 		<div class="row">
+	 			<div class="col-lg-8 col-lg-offset-2">
+	 			<i class="fa fa-comment-o"></i>
+	 			<p class="founder-text">I founded Savant Digital in order to design and maintain enterprise-grade websites, web applications, and diverse IT services for businesses of all sizes. We live in a time which has been defined by ever-increasing internet usage by individuals and businesses alike. Business websites offer consumers a place to learn more about a business before they make a purchase. Any business without a website is severely limiting any possible sales opporunities, every company needs a public face.</p>
+	 			<hr />
+	 			<blockquote><p class="founder-text">Our goal is to bring your business new customers through web services and to make everyday business more efficient for your employees. Having a public website as well as properly utilized IT infrastructure will streamline business operations.</p></blockquote>   
+	 			<h3><br/>Benjamin Pinkert</h3>
+	 			<h4>CEO / Systems Administrator - Savant Digital</h4>
+	 			<p><a href="/about/team/" class="btn btn-theme">More about the team</a> 
+	 			</div>
+	 		</div><!-- /row -->
+	 	</div><!-- /container -->
+	 </div><!-- /twrap -->
+	 
+	<!-- *****************************************************************************************************************
+	 OUR CLIENTS
+	 ***************************************************************************************************************** -->
+	 <div id="cwrap">
+		 <div class="container">
+		 	<div class="row centered">
+			 	<h3>OUR CLIENTS</h3>
+			 	<div class="col-lg-3 col-md-3 col-sm-3">
+			 		<a href="https://www.mjbcorp.com" title="MJBCorp Real-estate in Westport CT"><img src="{% static "img/clients/mjbcorp-logo.png" %}" class="img-responsive"></a>
+			 	</div>
+			 	<div class="col-lg-3 col-md-3 col-sm-3">
+			 		<a href="http://www.isawell.com" title="Interstate Artesian Well Company"><img src="{% static "img/clients/isawell-logo.png" %}" class="img-responsive"></a>
+			 	</div>
+			 	<div class="col-lg-3 col-md-3 col-sm-3">
+			 		<a href="https://www.nanobca.org" title="NanoBusiness Commercialization Association"><img src="{% static "img/clients/NanoBCA-logo.png" %}" class="img-responsive"></a>
+			 	</div>
+			 	<div class="col-lg-3 col-md-3 col-sm-3">
+			 		<a href="https://www.amysuetaylorlaw.com" title="AmySue Taylor Law - Personal Injury Lawyer in Ohio"><img src="{% static "img/clients/amysuetaylor-logo.png" %}" class="img-responsive" style="border: 1px solid #000 !important;
+background-color: #F38100;
+border-radius: 15px;"></a>
+			 	</div>
+		 	</div><!-- /row -->
+		 </div><!-- /container -->
+	 </div><!-- /cwrap -->
+{% endblock %}
