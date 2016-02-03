@@ -2,3 +2,10 @@
 [2016-01-13 17:59:18 +0000] [26950] [INFO] Listening at: unix:/srv/savsite/gunicorn.sock (26950)
 [2016-01-13 17:59:18 +0000] [26950] [INFO] Using worker: sync
 [2016-01-13 17:59:18 +0000] [26955] [INFO] Booting worker with pid: 26955
+[2016-01-27 23:23:33 +0000] [26950] [INFO] Handling signal: term
+[2016-01-27 23:23:33 +0000] [26955] [INFO] Worker exiting (pid: 26955)
+[2016-01-27 23:23:33 +0000] [26950] [INFO] Shutting down: Master
+[2016-01-28 14:31:25 +0000] [32042] [INFO] Starting gunicorn 19.4.5
+[2016-01-28 14:31:25 +0000] [32042] [INFO] Listening at: unix:/srv/savsite/gunicorn.sock (32042)
+[2016-01-28 14:31:25 +0000] [32042] [INFO] Using worker: sync
+[2016-01-28 14:31:25 +0000] [32047] [INFO] Booting worker with pid: 32047
