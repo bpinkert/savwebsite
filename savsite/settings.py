@@ -90,7 +90,7 @@ USE_MODELTRANSLATION = False
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = ['savantdigital.net','www.savantdigital.net','websitesavants.com', 'www.websitesavants.com']
+ALLOWED_HOSTS = ['savantdigital.net','www.savantdigital.net','websitesavants.com', 'www.websitesavants.com','*']
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -102,7 +102,7 @@ ALLOWED_HOSTS = ['savantdigital.net','www.savantdigital.net','websitesavants.com
 TIME_ZONE = 'America/New_York'
 
 ## secret key here, why not --BP
-SECRET_KEY = '5240095557e9e73957536bc8e04535d15a3ec40e0c45fcd5'
+SECRET_KEY = ''
 
 # If you set this to True, Django will use timezone-aware datetimes.
 USE_TZ = True
@@ -225,6 +225,7 @@ INSTALLED_APPS = (
     "mezzanine.galleries",
     "mezzanine.twitter",
     "mezzanine.accounts",
+    "webbugger",
     # "mezzanine.mobile",
     #"savpay",
 )
